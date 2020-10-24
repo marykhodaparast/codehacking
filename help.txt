@@ -1,0 +1,2 @@
+to update composer run => composer self-update
+http error 500 is sometimes for permissions in macbook so run => sudo chmod -R o+w storage
