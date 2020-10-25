@@ -1,2 +1,7 @@
 to update composer run => composer self-update
 http error 500 is sometimes for permissions in macbook so run => sudo chmod -R o+w storage
+
+27-195:
+php artisan --version => gives you version of laravel framework you have
+if it is 5.2 you can run => npm install --global gulp but in version 5.4 instead of
+gulp.js we have webpack.mix.js
