@@ -5,11 +5,23 @@
     <h1>Create Users</h1>
     {!! Form::open(['method' => 'post', 'action' => 'AdminUsersController@store']) !!}
     <div class="form-group">
-        {!! Form::label('title','Title') !!}
-        {!! Form::text('title',null,['class' => 'form-control']) !!}
+        {!! Form::label('name','Name') !!}
+        {!! Form::text('name',null,['class' => 'form-control']) !!}
     </div>
     <div class="form-group">
-        {!! Form::submit('Create Post',['class' => 'btn btn-primary']) !!}
+        {!! Form::label('email','Email') !!}
+        {!! Form::email('email',null,['class' => 'form-control']) !!}
+    </div>
+    <div class="form-group">
+        {!! Form::label('role_id','Role') !!}
+        {!! Form::text('role_id',null,['class' => 'form-control']) !!}
+    </div>
+    <div class="form-group">
+        {!! Form::label('is_active','Status') !!}
+        {!! Form::text('is_active',null,['class' => 'form-control']) !!}
+    </div>
+    <div class="form-group">
+        {!! Form::submit('Create User',['class' => 'btn btn-primary']) !!}
     </div>
     {!! Form::close() !!}
 @stop
