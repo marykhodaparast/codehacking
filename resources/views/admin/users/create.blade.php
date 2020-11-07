@@ -17,8 +17,8 @@
         {!! Form::text('role_id',null,['class' => 'form-control']) !!}
     </div>
     <div class="form-group">
-        {!! Form::label('is_active','Status') !!}
-        {!! Form::text('is_active',null,['class' => 'form-control']) !!}
+        {!! Form::label('status','Status') !!}
+        {!! Form::text('status',null,['class' => 'form-control']) !!}
     </div>
     <div class="form-group">
         {!! Form::submit('Create User',['class' => 'btn btn-primary']) !!}
