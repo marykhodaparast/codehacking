@@ -8,3 +8,6 @@ gulp.js we have webpack.mix.js
 
 27-201
 write in the terminal => composer require "laravelcollective/html":"^5.2"
+
+27-205:
+if we set required with empty fields of create user request it refreshes the page
