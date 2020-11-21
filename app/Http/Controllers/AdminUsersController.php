@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Photo;
 use App\Role;
 use Illuminate\Http\Request;
 
@@ -44,8 +45,13 @@ class AdminUsersController extends Controller
         //return $request->all();
         //User::create($request->all());
         $input = $request->all();
-        if($request->file('photo_id')){
-            return "photo exists";
+        if($file = $request->file('photo_id')){
+            //return "photo exists";
+            $name = time() . $file->getClientOriginalName();
+            $file->move('images',$name);
+            $photo = Photo::create(['file' => $name] );
+            $input['photo_id'] = $photo->id;
+
         }
         return redirect('/admin/users');
     }
