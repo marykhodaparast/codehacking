@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PostsCreateRequest;
+use App\Photo;
 use App\Post;
 use Illuminate\Http\Request;
 
@@ -41,7 +42,14 @@ class AdminPostsController extends Controller
     public function store(PostsCreateRequest $request)
     {
         $user = Auth::user();
-
+        $input = $request->all();
+        if($file = $request->file('photo_id')){
+            //return "it works";
+            $name = time().$file->getClientOriginalName();
+            $file->move('images',$name);
+            $photo = Photo::create(['file' => $name]);
+            $input['photo_id'] = $photo->id;
+        }
     }
 
     /**
