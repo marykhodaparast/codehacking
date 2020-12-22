@@ -11,3 +11,6 @@ write in the terminal => composer require "laravelcollective/html":"^5.2"
 
 27-205:
 if we set required with empty fields of create user request it refreshes the page
+
+28-239:
+helper functions in laravel (arrays,strings,...)

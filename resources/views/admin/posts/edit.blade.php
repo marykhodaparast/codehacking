@@ -2,7 +2,7 @@
 @section('content')
     <h1>Edit post</h1>
     <div class="row">
-        {!! Form::model(['method' => 'PATCH', 'action' => ['AdminPostsController@update',$post->id],'files' => true]) !!}
+        {!! Form::model($post,['method' => 'PATCH', 'action' => ['AdminPostsController@update',$post->id],'files' => true]) !!}
         <div class="form-group">
             {!! Form::label('title','Title') !!}
             {!! Form::text('title',null,['class' => 'form-control']) !!}
@@ -21,7 +21,7 @@
             {!! Form::textarea('body',null,['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
-            {!! Form::submit('Create Post',['class' => 'btn btn-primary']) !!}
+            {!! Form::submit('Update Post',['class' => 'btn btn-primary']) !!}
         </div>
         {!! Form::close() !!}
     </div>
