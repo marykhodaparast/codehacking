@@ -14,3 +14,6 @@ if we set required with empty fields of create user request it refreshes the pag
 
 28-239:
 helper functions in laravel (arrays,strings,...)
+
+30-250:
+search dropzone js for footer script in admin.media.create => Upload Media
