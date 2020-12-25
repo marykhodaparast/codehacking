@@ -115,4 +115,8 @@ class AdminPostsController extends Controller
         $post->delete();
         return redirect('/admin/posts');
     }
+    public function post($id)
+    {
+        return "it works";
+    }
 }
