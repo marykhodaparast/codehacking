@@ -17,3 +17,7 @@ helper functions in laravel (arrays,strings,...)
 
 30-250:
 search dropzone js for footer script in admin.media.create => Upload Media
+
+31-253:
+if you have post_id->unsigned()->index and foregin key constraint for it in a migration you should have all of the foreign
+keys in your migrations to be unsigned()->index() so that you do not see the error "Foreign key constraints" in laravel
