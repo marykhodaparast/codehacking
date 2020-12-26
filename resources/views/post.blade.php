@@ -29,70 +29,74 @@
 
     <!-- Blog Comments -->
     @if(\Illuminate\Support\Facades\Session::has('comment_message'))
-       {{session('comment_message')}}
+        {{session('comment_message')}}
     @endif
     <!-- Comments Form -->
-    <div class="well">
-        <h4>Leave a Comment:</h4>
-        {!! Form::open(['method' => 'post', 'action' => 'PostCommentsController@store']) !!}
-        <input type="hidden" name="post_id" value="{{$post->id}}">
-        <div class="form-group">
-            {!! Form::label('body','Body:') !!}
-            {!! Form::textarea('body',null,['class' => 'form-control','rows' => 3]) !!}
+    @if(\Illuminate\Support\Facades\Auth::check())
+        <div class="well">
+            <h4>Leave a Comment:</h4>
+            {!! Form::open(['method' => 'post', 'action' => 'PostCommentsController@store']) !!}
+            <input type="hidden" name="post_id" value="{{$post->id}}">
+            <div class="form-group">
+                {!! Form::label('body','Body:') !!}
+                {!! Form::textarea('body',null,['class' => 'form-control','rows' => 3]) !!}
+            </div>
+            <div class="form-group">
+                {!! Form::submit('Submit comment',['class' => 'btn btn-primary']) !!}
+            </div>
+            {!! Form::close() !!}
         </div>
-        <div class="form-group">
-            {!! Form::submit('Submit comment',['class' => 'btn btn-primary']) !!}
-        </div>
-        {!! Form::close() !!}
-    </div>
+    @endif
 
     <hr>
 
     <!-- Posted Comments -->
 
     <!-- Comment -->
-    <div class="media">
-        <a class="pull-left" href="#">
-            <img class="media-object" src="http://placehold.it/64x64" alt="">
-        </a>
-        <div class="media-body">
-            <h4 class="media-heading">Start Bootstrap
-                <small>August 25, 2014 at 9:30 PM</small>
-            </h4>
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras
-            purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
-            fringilla. Donec lacinia congue felis in faucibus.
-        </div>
-    </div>
-
-    <!-- Comment -->
-    <div class="media">
-        <a class="pull-left" href="#">
-            <img class="media-object" src="http://placehold.it/64x64" alt="">
-        </a>
-        <div class="media-body">
-            <h4 class="media-heading">Start Bootstrap
-                <small>August 25, 2014 at 9:30 PM</small>
-            </h4>
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras
-            purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
-            fringilla. Donec lacinia congue felis in faucibus.
-            <!-- Nested Comment -->
+    @if(count($post->comments)>0)
+        @foreach($post->comments as $comment)
             <div class="media">
                 <a class="pull-left" href="#">
-                    <img class="media-object" src="http://placehold.it/64x64" alt="">
+                    <img class="media-object" src="{{$comment->photo}}" alt="" height="64">
                 </a>
                 <div class="media-body">
-                    <h4 class="media-heading">Nested Start Bootstrap
-                        <small>August 25, 2014 at 9:30 PM</small>
+                    <h4 class="media-heading">{{$comment->author}}
+                        <small>{{$comment->created_at->diffForHumans()}}</small>
                     </h4>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.
-                    Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-                    vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    {{$comment->body}}
                 </div>
             </div>
-            <!-- End Nested Comment -->
+        @endforeach
+    @endif
+
+    <!-- Comment -->
+        <div class="media">
+            <a class="pull-left" href="#">
+                <img class="media-object" src="http://placehold.it/64x64" alt="">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">Start Bootstrap
+                    <small>August 25, 2014 at 9:30 PM</small>
+                </h4>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras
+                purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
+                fringilla. Donec lacinia congue felis in faucibus.
+                <!-- Nested Comment -->
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="http://placehold.it/64x64" alt="">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">Nested Start Bootstrap
+                            <small>August 25, 2014 at 9:30 PM</small>
+                        </h4>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.
+                        Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
+                        vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    </div>
+                </div>
+                <!-- End Nested Comment -->
+            </div>
         </div>
-    </div>
 
 @endsection
