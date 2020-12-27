@@ -80,6 +80,7 @@
                             vulputate fringilla. Donec lacinia congue felis in faucibus.
                         </div>
                         {!! Form::open(['method' => 'post', 'action' => 'CommentRepliesController@createReply']) !!}
+                        <input type="hidden" name="comment_id" value="{{$comment->id}}">
                         <div class="form-group">
                             {!! Form::label('body','Body:') !!}
                             {!! Form::textarea('body',null,['class' => 'form-control','rows' => 1]) !!}
