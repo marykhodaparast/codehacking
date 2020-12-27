@@ -79,7 +79,7 @@
                                 </div>
                                 <div class="comment-reply-container">
                                     <button class="toggle-reply btn btn-primary pull-right">Reply</button>
-                                    <div class="comment-reply">
+                                    <div class="comment-reply col-sm-6">
                                         {!! Form::open(['method' => 'post', 'action' => 'CommentRepliesController@createReply']) !!}
                                         <input type="hidden" name="comment_id" value="{{$comment->id}}">
                                         <div class="form-group">
