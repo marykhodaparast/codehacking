@@ -24,3 +24,6 @@ keys in your migrations to be unsigned()->index() so that you do not see the err
 
 32-273:
 first follow the link => https://github.com/cviebrock/eloquent-sluggable
+
+32-274:
+search in google "str_slug in laravel"

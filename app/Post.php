@@ -4,11 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 
 
 class Post extends Model
 {
     use Sluggable;
+    use SluggableScopeHelpers;
 
     protected $fillable = [
         'title',
@@ -22,7 +24,7 @@ class Post extends Model
     {
         return [
             'slug' => [
-                'source' => 'title'
+                'source' => 'title',
             ]
         ];
     }

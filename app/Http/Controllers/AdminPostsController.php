@@ -115,9 +115,9 @@ class AdminPostsController extends Controller
         $post->delete();
         return redirect('/admin/posts');
     }
-    public function post($id)
+    public function post($slug)
     {
-        $post = Post::findOrFail($id);
+        $post = Post::findBySlugOrFail($slug);
         $comments = $post->comments->where('is_active',1);
         return view('post',compact('post','comments'));
     }
