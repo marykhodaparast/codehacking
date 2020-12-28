@@ -31,3 +31,24 @@ search in google "str_slug in laravel"
 33-277:
 for laravel 5.3 you should see laravel-news and see what changed in laravel 5.3 so that you can change the version of
 your laravel to 5.3
+
+33-279:
+first install version 5.3 of laravel to see the changes
+first go to composer.json in your laravel 5.2 app and change the version of laravel to 5.3 like below
+"require": {
+        "php": ">=5.5.9",
+        "laravel/framework": "5.2.*",
+        "laravelcollective/html": "^5.2",
+        "cviebrock/eloquent-sluggable": "^4.1.0"
+},
+change to:
+"require": {
+        "php": ">=5.5.9",
+        "laravel/framework": "5.3.*",
+        "laravelcollective/html": "^5.2",
+        "cviebrock/eloquent-sluggable": "^4.1.0"
+},
+and then run "composer update" to see which errors you will see
+and you should solve error and then run "composer update" and do
+this so that you don't have any error when running composer update
+run php artisan --version to see the version of your laravel
