@@ -27,3 +27,7 @@ first follow the link => https://github.com/cviebrock/eloquent-sluggable
 
 32-274:
 search in google "str_slug in laravel"
+
+33-277:
+for laravel 5.3 you should see laravel-news and see what changed in laravel 5.3 so that you can change the version of
+your laravel to 5.3
