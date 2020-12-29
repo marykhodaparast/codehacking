@@ -52,3 +52,8 @@ and then run "composer update" to see which errors you will see
 and you should solve error and then run "composer update" and do
 this so that you don't have any error when running composer update
 run php artisan --version to see the version of your laravel
+
+33-280:
+After doing php artisan route:list we get the error bleow
+Trait 'Illuminate\Foundation\Auth\Access\AuthorizesResources' not found
+and then we go to app/http/controllers/controller.php and remove the "AuthorizeResources" from there
