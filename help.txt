@@ -57,3 +57,6 @@ run php artisan --version to see the version of your laravel
 After doing php artisan route:list we get the error bleow
 Trait 'Illuminate\Foundation\Auth\Access\AuthorizesResources' not found
 and then we go to app/http/controllers/controller.php and remove the "AuthorizeResources" from there
+
+33-281:
+copy and paste php files in Auth folder of laravel 5.3 to our project(5.2)
