@@ -69,4 +69,12 @@ sequel pro  => database for macbook
 
 14. 34-288:
 tinymce.com
-Unisharp laravel filemanager
+use scripts in tinyeditor.blade.php
+include the tinyeditor in admin/post/created.blade.php
+Unisharp laravel filemanager->integration and change the 
+and change the file tinyeditor.blade.php and in config/lfm.php 
+change the photos to images it means photos folder change to 
+images folder
+
+15. 34-289:
+https://unisharp.github.io/laravel-filemanager/integration

@@ -19,7 +19,7 @@
         <div class="form-group">
             {!! Form::label('body','Description:') !!}
             {{--        {!! Form::textarea('body',null,['class' => 'form-control','rows' => 3]) !!}--}}
-            {!! Form::textarea('body',null,['class' => 'form-control']) !!}
+            {!! Form::textarea('body',null,['class' => 'form-control my-editor']) !!}
         </div>
         <div class="form-group">
             {!! Form::submit('Create Post',['class' => 'btn btn-primary']) !!}
