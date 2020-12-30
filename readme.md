@@ -66,3 +66,7 @@ copy and paste php files in Auth folder of laravel 5.3 to our project(5.2) and c
 https://laravel.com/docs/5.3/upgrade#upgrade-5.3.0
 
 sequel pro  => database for macbook
+
+14. 34-288:
+tinymce.com
+Unisharp laravel filemanager
