@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 @section('content')
+    @include('includes.tinyeditor')
     <h1>Edit post</h1>
     <div class="row">
         <div class="col-sm-3">
@@ -22,7 +23,7 @@
             <div class="form-group">
                 {!! Form::label('body','Description:') !!}
                 {{--        {!! Form::textarea('body',null,['class' => 'form-control','rows' => 3]) !!}--}}
-                {!! Form::textarea('body',null,['class' => 'form-control']) !!}
+                {!! Form::textarea('body',null,['class' => 'form-control my-editor']) !!}
             </div>
             <div class="form-group">
                 {!! Form::submit('Update Post',['class' => 'btn btn-warning col-sm-6']) !!}
