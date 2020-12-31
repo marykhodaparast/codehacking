@@ -30,12 +30,6 @@
                         <td>{{ $photo->id }}</td>
                         <td><img src="{{$photo->file}}" alt="" height="50"></td>
                         <td>{{$photo->created_at ? $photo->created_at->diffForHumans() : 'no date'}}</td>
-                        <td>
-                            <input type="hidden" name="photo" value="{{$photo->id}}">
-                            <div class="form-group">
-                                <input type="submit" name="delete_single" value="Delete" class="btn btn-danger">
-                            </div>
-                        </td>
                     </tr>
                 @endforeach
                 </tbody>
