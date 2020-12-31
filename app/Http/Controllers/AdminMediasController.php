@@ -37,7 +37,6 @@ class AdminMediasController extends Controller
             return redirect()->back();
         }
         return redirect()->back();
-
     }
 
 }
