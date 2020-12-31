@@ -53,7 +53,7 @@ Route::group(['middleware' => 'admin'], function () {
         'store' => 'admin.media.store',
         'edit' => 'admin.media.edit',
     ]]);
-    Route::post('/delete/media','AdminMediasController@deleteMedia');
+    Route::delete('/delete/media','AdminMediasController@deleteMedia');
     Route::any('admin/media/upload', ['as' => 'admin.media.upload', 'uses' => 'AdminMediasController@store']);
     Route::resource('admin/comments', 'PostCommentsController', ['names' => [
         'index' => 'admin.comments.index',
