@@ -25,7 +25,8 @@
                 <tbody>
                 @foreach($photos as $photo)
                     <tr>
-                        <td><input type="checkbox" name="checkBoxArray[]" value="{{$photo->id}}" class="checkboxes"></td>
+                        <td><input type="checkbox" name="checkBoxArray[]" value="{{$photo->id}}" class="checkboxes">
+                        </td>
                         <td>{{ $photo->id }}</td>
                         <td><img src="{{$photo->file}}" alt="" height="50"></td>
                         <td>{{$photo->created_at ? $photo->created_at->diffForHumans() : 'no date'}}</td>
@@ -42,4 +43,22 @@
             </table>
         </form>
     @endif
+@endsection
+@section('scripts')
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#options').on('click', function () {
+                if (this.checked) {
+                    $('.checkboxes').each(function () {
+                        this.checked = true;
+                    });
+                } else {
+                    $('.checkboxes').each(function () {
+                        this.checked = false;
+                    });
+                }
+            });
+        });
+    </script>
+
 @endsection
