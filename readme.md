@@ -78,3 +78,11 @@ images folder
 
 15. 34-289:
 https://unisharp.github.io/laravel-filemanager/integration
+
+Hosting
+1. enable SSH
+2. check php version
+3. composer install
+4. laravel.com via laravel installer
+5. uploading project into cpanel
+6. go to nano .env and change app_debug to false and mode to production
