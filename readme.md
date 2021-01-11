@@ -99,3 +99,7 @@ do changes
  and then php artisan --version should be 5.4
  then php artisan view:clear
  then php artisan route:clear
+ 
+ 38-312:
+ copy gulpfile items and then delete gulpfile.js to install webpack use webpack.mix.js
+ and then delete node_modules
