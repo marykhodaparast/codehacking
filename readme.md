@@ -103,3 +103,7 @@ do changes
  38-312:
  copy gulpfile items and then delete gulpfile.js to install webpack use webpack.mix.js
  and then delete node_modules
+ 
+ 38-313:
+ change resources/assets/js files and then run npm install
+ when you change sass run npm run dev to see the changes
