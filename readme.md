@@ -86,3 +86,16 @@ Hosting
 4. laravel.com via laravel installer
 5. uploading project into cpanel
 6. go to nano .env and change app_debug to false and mode to production
+
+16. 38-311:
+first search laravel 5.3 to 5.4 in google to see instructions
+do changes
+ Updating Dependencies
+ Update your laravel/framework dependency to 5.4.* in your composer.json file. In addition, you should update your phpunit/phpunit dependency to ~5.7.
+ 
+ Removing Compiled Services File
+ If it exists, you may delete the bootstrap/cache/compiled.php file. It is no longer used by the framework.
+ and then composer update 
+ and then php artisan --version should be 5.4
+ then php artisan view:clear
+ then php artisan route:clear
