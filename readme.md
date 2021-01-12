@@ -111,8 +111,8 @@ do changes
  39-315:
  php artisan make:seeder UsersTableSeeder
  change the UsersTableSeeder 
- php artisan db:seed
  add line below to DatabaseSeeder
  $this->call(UsersTableSeeder::class);
+  php artisan db:seed
 
  
