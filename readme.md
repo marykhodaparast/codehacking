@@ -107,3 +107,12 @@ do changes
  38-313:
  change resources/assets/js files and then run npm install
  when you change sass run npm run dev to see the changes
+ 
+ 39-315:
+ php artisan make:seeder UsersTableSeeder
+ change the UsersTableSeeder 
+ php artisan db:seed
+ add line below to DatabaseSeeder
+ $this->call(UsersTableSeeder::class);
+
+ 
