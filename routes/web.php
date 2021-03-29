@@ -16,38 +16,19 @@ Auth::routes();
 
 Route::get('/logout', 'Auth\LoginController@logout');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','HomeController@index' );
 
 Route::group(['middleware'=>'admin'], function(){
 
-    Route::get('/admin', function(){
-
-        return view('admin.index');
-
-
-
-
-    });
-
-
-
+    Route::get('/admin','AdminController@index');
     Route::resource('admin/users', 'AdminUsersController',['names'=>[
-
 
         'index'=>'admin.users.index',
         'create'=>'admin.users.create',
         'store'=>'admin.users.store',
         'edit'=>'admin.users.edit'
 
-
-
-
-
-
     ]]);
-
 
     Route::get('/post/{id}', ['as'=>'home.post', 'uses'=>'AdminPostsController@post']);
 
@@ -58,25 +39,16 @@ Route::group(['middleware'=>'admin'], function(){
         'store'=>'admin.posts.store',
         'edit'=>'admin.posts.edit'
 
-
-
-
-
     ]]);
 
     Route::resource('admin/categories', 'AdminCategoriesController',['names'=>[
-
 
         'index'=>'admin.categories.index',
         'create'=>'admin.categories.create',
         'store'=>'admin.categories.store',
         'edit'=>'admin.categories.edit'
 
-
     ]]);
-
-
-
 
     Route::resource('admin/media', 'AdminMediasController',['names'=>[
 
@@ -85,16 +57,11 @@ Route::group(['middleware'=>'admin'], function(){
         'store'=>'admin.media.store',
         'edit'=>'admin.media.edit'
 
-
-
-
     ]]);
 
     Route::delete('admin/delete/media', 'AdminMediasController@deleteMedia');
 
-
     Route::resource('admin/comments', 'PostCommentsController',['names'=>[
-
 
         'index'=>'admin.comments.index',
         'create'=>'admin.comments.create',
@@ -102,13 +69,10 @@ Route::group(['middleware'=>'admin'], function(){
         'edit'=>'admin.comments.edit',
         'show'=>'admin.comments.show'
 
-
     ]]);
 
 
     Route::resource('admin/comment/replies', 'CommentRepliesController',['names'=>[
-
-
 
         'index'=>'admin.replies.index',
         'create'=>'admin.replies.create',
@@ -116,11 +80,6 @@ Route::group(['middleware'=>'admin'], function(){
         'edit'=>'admin.replies.edit',
         'show' => 'admin.comment.replies.show'
 
-
     ]]);
-
-
-
-
 
 });
