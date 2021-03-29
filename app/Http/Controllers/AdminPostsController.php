@@ -24,7 +24,11 @@ class AdminPostsController extends Controller
 
 
         $posts = Post::paginate(2);
+<<<<<<< HEAD
 
+=======
+        $categories = Category::all(); 
+>>>>>>> master
 
 
         return view('admin.posts.index', compact('posts','categories'));
