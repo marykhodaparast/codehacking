@@ -24,6 +24,7 @@ class AdminPostsController extends Controller
 
 
         $posts = Post::paginate(2);
+
         $categories = Category::all(); 
 
 
