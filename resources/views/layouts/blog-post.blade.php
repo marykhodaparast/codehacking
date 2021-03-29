@@ -21,7 +21,6 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    @yield('styles')
     <![endif]-->
 
 </head>
@@ -67,9 +66,19 @@
 
         <!-- Blog Post Content Column -->
         <div class="col-lg-8">
-           @yield('content')
+
+            @yield('content')
+
+
+
 
         </div>
+
+
+
+
+
+
 
         <!-- Blog Sidebar Widgets Column -->
         <div class="col-md-4">
@@ -79,10 +88,10 @@
                 <h4>Blog Search</h4>
                 <div class="input-group">
                     <input type="text" class="form-control">
-                    <span class="input-group-btn">
+                        <span class="input-group-btn">
                             <button class="btn btn-default" type="button">
                                 <span class="glyphicon glyphicon-search"></span>
-                        </button>
+                            </button>
                         </span>
                 </div>
                 <!-- /.input-group -->
@@ -146,8 +155,16 @@
 </div>
 <!-- /.container -->
 
+<!-- jQuery -->
+
 <script src="{{asset('js/libs.js')}}"></script>
+
+
 @yield('scripts')
+
+
+
+
 
 </body>
 

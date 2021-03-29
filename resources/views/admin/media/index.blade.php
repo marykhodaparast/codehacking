@@ -1,56 +1,120 @@
 @extends('layouts.admin')
+
+
+
+
+
 @section('content')
+
+
     <h1>Media</h1>
+
     @if($photos)
-        <form action="delete/media" method="POST" class="form-inline">
+
+
+        <form action="delete/media" method="post" class="form-inline">
+
             {{csrf_field()}}
+
             {{method_field('delete')}}
+
+
             <div class="form-group">
-                <select name="" id="" class="form-control">
+                <select name="checkBoxArray" id="" class="form-control">
+
                     <option value="">Delete</option>
+
                 </select>
             </div>
             <div class="form-group">
-                <input type="submit" name="delete_all" class="btn btn-primary">
+               <input type="submit" name="delete_all" class="btn-primary">
             </div>
-            <table class="table">
-                <thead>
+
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th><input type="checkbox" id="options"></th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Created</th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+            @foreach($photos as $photo)
+
                 <tr>
-                    <th><input type="checkbox" id="options" class="checkboxes"></th>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Created</th>
+                    <td><input class="checkBoxes" type="checkbox" name="checkBoxArray[]" value="{{$photo->id}}"></td>
+                    <td>{{$photo->id}}</td>
+                    <td><img height="50" src="{{$photo->file}}" alt=""></td>
+                    <td>{{$photo->created_at ? $photo->created_at : 'no date' }}</td>
+                    <td><input type="hidden" name="photo" value="{{$photo->id}}"></td>
                 </tr>
-                </thead>
-                <tbody>
-                @foreach($photos as $photo)
-                    <tr>
-                        <td><input type="checkbox" name="checkBoxArray[]" value="{{$photo->id}}" class="checkboxes">
-                        </td>
-                        <td>{{ $photo->id }}</td>
-                        <td><img src="{{$photo->file}}" alt="" height="50"></td>
-                        <td>{{$photo->created_at ? $photo->created_at->diffForHumans() : 'no date'}}</td>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
+
+            @endforeach
+
+            </tbody>
+        </table>
+
         </form>
+
     @endif
-@endsection
+
+
+
+
+@stop
+
 @section('scripts')
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#options').on('click', function () {
-                if (this.checked) {
-                    $('.checkboxes').each(function () {
+
+
+    <script>
+
+
+        $(document).ready(function(){
+
+
+            $('#options').click(function(){
+
+
+                if(this.checked){
+
+                    $('.checkBoxes').each(function(){
+
+
                         this.checked = true;
+
                     });
-                } else {
-                    $('.checkboxes').each(function () {
+
+                }else {
+
+                    $('.checkBoxes').each(function(){
+
+
                         this.checked = false;
+
                     });
+
+
+
                 }
+
+
+
+
+
+
             });
+
+
+
         });
+
+
     </script>
-@endsection
+
+
+@stop
+
