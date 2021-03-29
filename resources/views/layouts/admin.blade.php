@@ -27,7 +27,6 @@
 
      @yield('styles')
 
-
 </head>
 
 <body id="admin-page">
